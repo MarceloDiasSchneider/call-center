@@ -44,20 +44,20 @@
                     </optgroup>
                 </select>
                 <br>
-                <input type="button" id="confirm-form" value="Confirm" disabled>
+                <input type="button" id="confirm-form" class="button" value="Confirm" disabled>
             </form>
         </div>
         <div id="div-description" class="description hidden">
             <label for="description">Description</label>
             <textarea id="description" name="description" maxlength="250" placeholder="Describe the problem"></textarea>
-            <input type="button" id="confirm-description" value="Confirm"> 
+            <input type="button" id="confirm-description" class="button" value="Confirm"> 
         </div>
-        <div id="others-descriptions" class="others-description"></div>
+        <div id="others-descriptions" class="others_descriptions hidden"></div>
     </section>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javascript/form-control.js"></script>
-    <script src="javascript/insert-data.js"></script>
+    <script src="javascript/open-ticket.js"></script>
     <script src="javascript/insert-description.js"></script>
     <script src="javascript/load-descrioptions.js"></script>
 </body>

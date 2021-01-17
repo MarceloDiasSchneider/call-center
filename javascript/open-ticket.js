@@ -22,9 +22,13 @@ document.querySelector('#confirm-form').addEventListener('click', () => {
                 ticketLastId = phpReturns
             } else {
                 $('#others-descriptions').html('We had a problem on database') 
+                document.querySelector('#div-description').setAttribute('class', 'hidden')
+                document.querySelector('#others-descriptions').classList.remove('hidden')
             }
         } else{
             $('#others-descriptions').html('We had a problem to connect with PHP') 
+            document.querySelector('#div-description').setAttribute('class', 'hidden')
+            document.querySelector('#others-descriptions').classList.remove('hidden')
         }
     })
 })

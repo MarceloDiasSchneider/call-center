@@ -1,28 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+/* variable */
+:root{
+    --color-header: #FF7700;
+    --color-font-header: #ffffff;
+    --color-font: #000000;
+    --color-button: #FF7700;
+    --color-font-button: #ffffff;
+    --color-input: #ffffff;
+    --color-backgournd-grid: #c0c0c0;
+    --color-backgournd-description: #ffffff;
+    --color-font-description: #c0c0c0;
+    --box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+
+}
+/* reset all browser*/ 
 *{
-    margin: 0;
-    padding: 5px;
+    margin: 1%;
+    padding: 1%;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
 }
 section{
     max-width: 750px;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 70px 150px 140px auto;
+    grid-template-rows: auto auto auto auto;
     column-gap: 10px;
     row-gap: 10px;
     grid-template-areas: 
-        " header header "
+        " header header " 
         " calendar form "
         " description description "
-        " others_description others_description ";
+        " others_descriptions others_descriptions ";
 }
 /* setting grid to mobile */
 @media screen and (max-width: 800px){
     section{
         max-width: 80%;
         grid-template-columns: 1fr;
-        grid-template-rows: 70px 80px 150px 140px auto;
+        grid-template-rows: auto auto auto auto auto;
         column-gap: 10px;
         row-gap: 10px;
         grid-template-areas: 
@@ -30,30 +48,47 @@ section{
             " calendar "
             " form " 
             " description "
-            "others_description";
+            "others_descriptions";
     }
 }
-
-
+@media screen and (max-width: 650px){
+    section{
+        max-width: 100%;
+    }
+}
 .header{
     grid-area: header;
-    background-color: silver;
+    background-color: var(--color-header);
+    color: var(--color-font-header);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+
 }
 .calendar{
     grid-area: calendar;
-    background-color: silver;
+    background-color: var(--color-backgournd-grid);
+    box-shadow: var(--box-shadow);
+
 }
 .form{
     grid-area: form;
-    background-color: silver;
+    background-color: var(--color-backgournd-grid);
+    box-shadow: var(--box-shadow);
 }
 .description{
     grid-area: description;
-    background-color: silver;
+    background-color: var(--color-backgournd-grid);
+    box-shadow: var(--box-shadow);
 }
-.others_description{
-    grid-area: others_description;
-    background-color: rgb(221, 10, 10);
+.others_descriptions{
+    grid-area: others_descriptions;
+    background-color: var(--color-backgournd-grid);
+    box-shadow: var(--box-shadow);
+    color: var(--color-button);
+}
+.other-description{
+    color: var(--color-font-description);
+    background-color: var(--color-backgournd-description);
 }
 
 
@@ -61,13 +96,21 @@ label{
     margin: 5px;
 }
 input, select, textarea{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--color-input);
     border: none;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
-
+    
 }
+.button{
+    background-color: var(--color-button);
+    margin-right: 20px;
+    margin-left: auto;
+    color: var(--color-font-button);
+    box-shadow: var(--box-shadow);
+    padding: 2%;
+}
+
 textarea{
-    width: 100%;
+    width: 98%;
     height: 70px;
     resize: none;
 }

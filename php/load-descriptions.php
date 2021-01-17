@@ -13,7 +13,7 @@
         $result = $statement->setFetchMode(PDO::FETCH_ASSOC);
 
         foreach ($statement->fetchAll() as $key => $value) {
-            echo "<p class='description'>".$value['description']."</p>";
+            echo "<p class='other-description'>".$value['description']."</p>";
         }
     } catch(PDOException $e){
         echo "error".$e->getMessage();

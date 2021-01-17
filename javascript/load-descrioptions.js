@@ -9,6 +9,7 @@ function loadDescriptions(idTicket){
         if(state == 'success'){
             if( phpReturns !== 'error'){
                 $('#others-descriptions').html(phpReturns) 
+                document.querySelector('#others-descriptions').classList.remove('hidden')
             } else {
                 $('#others-descriptions').html('We had a problem on database') 
             }
