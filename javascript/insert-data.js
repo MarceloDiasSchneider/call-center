@@ -1,6 +1,7 @@
 /* cominication between javascript and php to inser date into a database */
-document.querySelector('#button').addEventListener('click', () => {
-    /* get data from inpot */
+var ticketLastId = ''
+document.querySelector('#confirm-form').addEventListener('click', () => {
+    /* get data from input */
     let dateSelected = document.querySelector('#date-selected').value
     let responseble = document.querySelector('#responsible').value
     let order = document.querySelector('#order').value
@@ -11,13 +12,19 @@ document.querySelector('#button').addEventListener('click', () => {
         r : responseble,
         o : order
     }
-    $.post('php/save.php', dataToInser, function(phpReturns, state){
-        if(state == 'success'){
-            $('#res').html(phpReturns) 
-        } else{
-            $('#res').html('We had a problem') 
-        }
-        
-    })
 
+    /* using jQuery to comunicate with PHP */
+    $.post('php/open-ticket.php', dataToInser, function(phpReturns, state){
+        if(state == 'success'){
+            if( phpReturns !== 'error'){
+                document.querySelector('#div-description').classList.remove('hidden')
+                $('#others-descriptions').html('')
+                ticketLastId = phpReturns
+            } else {
+                $('#others-descriptions').html('We had a problem on database') 
+            }
+        } else{
+            $('#others-descriptions').html('We had a problem to connect with PHP') 
+        }
+    })
 })

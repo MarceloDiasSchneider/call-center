@@ -30,6 +30,6 @@ document.querySelector('#order').addEventListener('change', () => {
 /* release the bottun if all inputs have been changed */
 function releaseBottunConfirm (){
     if(date && responsible && order){
-        document.querySelector('#button').removeAttribute('disabled')
+        document.querySelector('#confirm-form').removeAttribute('disabled')
     }
 }

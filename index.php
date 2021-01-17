@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Call Center</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -27,9 +28,9 @@
                 <select name="responsible" id="responsible">
                     <optgroup label="Responsible">
                         <option value="" hidden selected></option>
-                        <option value="Marcelo">Marcelo</option>
-                        <option value="Andrea">Andrea</option>
-                        <option value="Arnaldo">Alrnaldo</option>
+                        <?php 
+                            require_once 'php/load-options-responsibles.php';
+                        ?>
                     </optgroup>
                 </select>
                 <br>
@@ -37,28 +38,27 @@
                 <select id="order" name="order">
                     <optgroup label="order">
                         <option value="" hidden selected></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
+                        <?php 
+                            require_once 'php/load-options-orders.php'
+                        ?>
                     </optgroup>
                 </select>
                 <br>
-                <input id="button" type="button" value="Confirm" disabled>
+                <input type="button" id="confirm-form" value="Confirm" disabled>
             </form>
         </div>
-        <p id="res">oi</p>
-        <div class="description">
+        <div id="div-description" class="description hidden">
             <label for="description">Description</label>
-            <textarea id="description" name="description" maxlength="250" ></textarea>
+            <textarea id="description" name="description" maxlength="250" placeholder="Describe the problem"></textarea>
+            <input type="button" id="confirm-description" value="Confirm"> 
         </div>
+        <div id="others-descriptions" class="others-description"></div>
     </section>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="javascript/script.js"></script>
+    <script src="javascript/form-control.js"></script>
     <script src="javascript/insert-data.js"></script>
+    <script src="javascript/insert-description.js"></script>
+    <script src="javascript/load-descrioptions.js"></script>
 </body>
 </html>
