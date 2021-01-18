@@ -6,6 +6,10 @@ document.querySelector('#confirm-form').addEventListener('click', () => {
     let responseble = document.querySelector('#responsible').value
     let order = document.querySelector('#order').value
     
+    /* disabled order with ticket created */
+    let x =document.querySelector('#order')
+    x.remove(x.selectedIndex);
+    
     /* creating a array to transport the data */
     let dataToInser = {
         d : dateSelected,
@@ -18,16 +22,17 @@ document.querySelector('#confirm-form').addEventListener('click', () => {
         if(state == 'success'){
             if( phpReturns !== 'error'){
                 document.querySelector('#div-description').classList.remove('hidden')
+                document.querySelector('#others-descriptions').classList.add('hidden')
                 $('#others-descriptions').html('')
                 ticketLastId = phpReturns
             } else {
                 $('#others-descriptions').html('We had a problem on database') 
-                document.querySelector('#div-description').setAttribute('class', 'hidden')
+                document.querySelector('#div-description').classList.add('hidden')
                 document.querySelector('#others-descriptions').classList.remove('hidden')
             }
         } else{
             $('#others-descriptions').html('We had a problem to connect with PHP') 
-            document.querySelector('#div-description').setAttribute('class', 'hidden')
+            document.querySelector('#div-description').classList.add('hidden')
             document.querySelector('#others-descriptions').classList.remove('hidden')
         }
     })

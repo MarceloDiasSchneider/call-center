@@ -1,4 +1,4 @@
-/* this functionis called when a descriptionis inserted on insert-descriptions.js */
+/* this function is called when a descriptionis inserted on insert-descriptions.js */
 function loadDescriptions(idTicket){
     let dataToSearch  = {
         i : idTicket
@@ -17,5 +17,4 @@ function loadDescriptions(idTicket){
             $('#others-descriptions').html('We had a problem to connect with PHP') 
         }
     })
-
 }

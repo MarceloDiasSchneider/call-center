@@ -15,20 +15,24 @@
 }
 /* reset all browser*/ 
 *{
-    margin: 1%;
-    padding: 1%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+section *{
+    margin: 10px;
+    padding: 10px;
     font-family: 'Lato', sans-serif;
     border-radius: 5px;
 }
+
 section{
     max-width: 750px;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto;
-    column-gap: 10px;
-    row-gap: 10px;
     grid-template-areas: 
         " header header " 
         " calendar form "
@@ -38,7 +42,7 @@ section{
 /* setting grid to mobile */
 @media screen and (max-width: 800px){
     section{
-        max-width: 80%;
+        max-width: 85%;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto auto;
         column-gap: 10px;
@@ -51,11 +55,7 @@ section{
             "others_descriptions";
     }
 }
-@media screen and (max-width: 650px){
-    section{
-        max-width: 100%;
-    }
-}
+
 .header{
     grid-area: header;
     background-color: var(--color-header);
@@ -110,7 +110,9 @@ input, select, textarea{
 }
 
 textarea{
-    width: 98%;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    width: 97%;
     height: 70px;
     resize: none;
 }
