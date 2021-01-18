@@ -1,8 +1,8 @@
 <?php
     /* info to conect to database */
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $servername = "107.180.25.194";
+    $username = "MarceloSchneider";
+    $password = "pfekr3sJ22VjzH8";
     $dbname = "call-center";
 
     /* test of conection with database */
