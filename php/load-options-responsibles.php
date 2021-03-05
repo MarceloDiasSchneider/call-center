@@ -1,5 +1,5 @@
 <?php
-    require 'conection.php';
+    require '../../db-conection/call-center-conection.php';
 
     try {
         $statement = $conn->prepare("SELECT * FROM responsibles");

@@ -1,5 +1,5 @@
 <?php
-    require 'conection.php';
+    require '../../../db-conection/call-center-conection.php';
     
     $date = filter_input(INPUT_POST, 'd', FILTER_SANITIZE_STRING);
     $responsible = filter_input(INPUT_POST, 'r', FILTER_SANITIZE_STRING);

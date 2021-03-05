@@ -1,5 +1,5 @@
 <?php
-    require 'conection.php';
+    require '../../../db-conection/call-center-conection.php';
 
     $idTicket = filter_input(INPUT_POST, 'i', FILTER_SANITIZE_STRING);
     
